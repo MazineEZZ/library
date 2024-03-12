@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:600);
+
+@font-face {
+  font-family: "Madimi One";
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/madimione/v1/2V0YKIEADpA8U6RygDnZVFMiBw.woff2) format('woff2');
+}
+
+:root {
+  --header-color: #ffffff;
+  --main-color: #f1f1f1;
+  --add-book-btn: #1b99ec;
+  --add-book-btn-hover: #1886cf;
+  
+  --shadow-color: #cbcfce;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--header-color);
+  padding: 40px 100px;
+  box-shadow: 0px 5px 10px var(--shadow-color);
+  z-index: 2;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 3rem;
+}
+
+header ul .logo {
+  font-family: "Madimi One";
+}
+
+header ul .log-in-btn button {
+  font-family: "Poppins";
+  font-size: 0.6em;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+main {
+  background-color: var(--main-color);
+  height: 100%;
+  z-index: 1;
+}
+
+main .add-book-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+main .add-book-btn button {
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--add-book-btn);
+  transition: 0.3s;
+}
+
+main .wrapper {
+  display: grid;
+  padding: 100px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+main .book {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px var(--shadow-color);
+}
+
+main .add-book-btn button:hover {
+  background-color: var(--add-book-btn-hover);
+  box-shadow: 0 0 10px 4px var(--shadow-color);
+}
+
+main .add-book-btn button p {
+  color: white;
+  font-family: "Poppins";
+  height: inherit;
+  width: calc(inherit - 8px);
+  font-size: 80px;
+  line-height: 80px;
+}
