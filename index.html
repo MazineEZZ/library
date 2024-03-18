@@ -21,7 +21,7 @@
   </header>
   <main>
     <div class="wrapper" id="bookWrapper">
-      <div class="book">
+      <!-- <div class="book">
         <div class="book-title">The Hobbit</div>
         <div class="book-details">
           <div class="author">
@@ -33,11 +33,34 @@
             <div class="value">295</div>
           </div>
         </div>
-        <button class="not-read" id="readToggleBtn">Read</button>
+        <button class="not-read" id="readToggleBtn"></button>
         <button class="delete" id="deleteBtn"><img src="assets/icons/delete.png" alt="delete"></button>
-      </div>
+      </div> -->
     </div>
-    <div class="add-book-btn" id="addBookBtn">
+    <dialog class="add-book-modal" id="addBookModal">
+      <form>
+        <div>Add Book</div>
+        <!-- Book title -->
+        <label for="bookTitle">Title: </label>
+        <input id="bookTitle" type="text">
+        <!-- Book author -->
+        <label for="bookAuthor">Author: </label>
+        <input id="bookAuthor" type="text">
+        <!-- Book pages -->
+        <label for="bookPages">Pages: </label>
+        <input id="bookPages" type="number">
+        <!-- Read -->
+        <select name="read">
+          <option>Read</option>
+          <option>Not read</option>
+        </select>
+
+        <button id="addBook" type="button">Add</button>
+        <button id="closeAddBookModal" type="button">Close</button>
+      </form>
+
+    </dialog>
+    <div class="open-add-book-modal-btn" id="openAddBookModalBtn">
       <button>
         <p>+</p>
       </button>

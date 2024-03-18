@@ -22,8 +22,8 @@
 :root {
   --header-color: #ffffff;
   --main-color: #f1f1f1;
-  --add-book-btn: #1b99ec;
-  --add-book-btn-hover: #1886cf;
+  --open-add-book-modal-btn: #1b99ec;
+  --open-add-book-modal-btn-hover: #1886cf;
   --read-btn: rgb(80, 230, 80);
   --read-btn-hover: rgb(68, 201, 68);
   --read-btn-active: rgb(56, 163, 56);
@@ -80,9 +80,9 @@ main {
 
 main .wrapper {
   display: grid;
-  padding: 90px 180px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 280px;
+  padding: 90px 140px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 300px;
   gap: 30px;
 }
 
@@ -93,6 +93,8 @@ main .book {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  row-gap: 15px;
   column-gap: 10px;
   box-shadow: 0 5px 5px var(--shadow-color);
 }
@@ -102,12 +104,12 @@ main .book-title {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: 2rem;
 }
 
 main .book-details {
   grid-column: span 2;
-  padding-bottom: 70px;
 }
 
 main .book .pages,
@@ -144,6 +146,10 @@ main .book .read {
   background-color: var(--read-btn);
 }
 
+main .book .read::before {
+  content: "Read";
+}
+
 main .book .read:hover {
   background-color: var(--read-btn-hover);
 }
@@ -157,7 +163,7 @@ main .book .not-read {
 }
 
 main .book .not-read::before {
-  content: "Not ";
+  content: "Not read";
 }
 
 main .book .not-read:hover {
@@ -168,31 +174,35 @@ main .book .not-read:active {
   background-color: var(--not-read-btn-active);
 }
 
-main .add-book-btn {
+main .open-add-book-modal-btn {
   position: fixed;
   bottom: 30px;
   right: 30px;
 }
 
-main .add-book-btn button {
+main .open-add-book-modal-btn button {
   border: none;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: var(--add-book-btn);
+  background-color: var(--open-add-book-modal-btn);
   transition: 0.3s;
 }
 
-main .add-book-btn button:hover {
-  background-color: var(--add-book-btn-hover);
+main .open-add-book-modal-btn button:hover {
+  background-color: var(--open-add-book-modal-btn-hover);
   box-shadow: 0 0 10px 4px var(--shadow-color);
 }
 
-main .add-book-btn button p {
+main .open-add-book-modal-btn button p {
   color: white;
   font-family: "Poppins bold";
   height: inherit;
   width: calc(inherit - 8px);
   font-size: 80px;
   line-height: 80px;
+}
+
+main .add-book-modal::backdrop {
+  background-color: rgb(0, 0, 0, 0.25);
 }
