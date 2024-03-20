@@ -1,37 +1,40 @@
 const myLibrary = {
-    "Atomic habits": {
-      author: "James Clear",
-      pages: 320,
+    "The Book": {
+      author: "The weeknd",
+      pages: "69",
       read: true
     },
-    "TheHobbit": {
-      author: "J. R. R Toekins",
-      pages: 295,
-      read: false
-    },
-    "The Hit": {
-      author: "J. R. R Toekins",
-      pages: 295,
-      read: false
-    }
 };
 
 const bookWrapper = document.getElementById("bookWrapper");
 // Modal
 const openAddBookModalBtn = document.getElementById("openAddBookModalBtn")
-const addBookDialog = document.getElementById("addBookModal");
-const closeAddBookDialog = document.getElementById("closeAddBookModal")
+const addBookModal = document.getElementById("addBookModal");
 const bookTitleInput= document.getElementById("bookTitle");
 const bookAuthorInput = document.getElementById("bookAuthor");
 const bookPagesInput = document.getElementById("bookPages");
+const bookReadSelect = document.getElementById("isBookRead");
+const closeaddBookModal = document.getElementById("closeAddBookModal");
+const addBook = document.getElementById("addBook");
 
-
-openAddBookModalBtn.addEventListener("click", () => {
-  addBookDialog.showModal();
+addBook.addEventListener("click", () => {
+  console.log(bookReadSelect.value)
+  addBookToLibrary(
+    bookTitleInput.value,
+    bookAuthorInput.value,
+    bookPagesInput.value,
+    bookReadSelect.value
+  )
+  displayBooks();
+  addBookModal.close();
 });
 
-closeAddBookDialog.addEventListener("click", () => {
-  addBookDialog.close();
+openAddBookModalBtn.addEventListener("click", () => {
+  addBookModal.showModal();
+});
+
+closeaddBookModal.addEventListener("click", () => {
+  addBookModal.close();
 });
 
 function Book(title, author, pages, read) {
@@ -42,7 +45,7 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(title, author, pages, read) {
-  read = (read === "read") ? true : false;
+  read = (read === "Read") ? true : false;
 
   myLibrary[title] = {
     author: author,

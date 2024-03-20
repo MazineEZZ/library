@@ -30,6 +30,8 @@
   --not-read-btn: rgb(224, 92, 92);
   --not-read-btn-hover: rgb(200, 69, 69);
   --not-read-btn-active: rgb(160, 54, 54);
+  --add-book-btn: var(--open-add-book-modal-btn);
+  --add-book-btn-hover: var(--open-add-book-modal-btn-hover);
   
   --shadow-color: #cbcfce;
 }
@@ -79,6 +81,7 @@ main {
 }
 
 main .wrapper {
+  background-color: var(--main-color);
   display: grid;
   padding: 90px 140px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -205,4 +208,73 @@ main .open-add-book-modal-btn button p {
 
 main .add-book-modal::backdrop {
   background-color: rgb(0, 0, 0, 0.25);
+}
+
+main .add-book-modal {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 0 var(--shadow-color);
+}
+
+main .add-book-modal img {
+  width: 2em;
+  vertical-align: middle;
+}
+
+main .add-book-modal form {
+  font-family: 'Poppins bold';
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+main .add-book-modal form .header {
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 300px;
+  margin-bottom: 5px;
+}
+
+main .add-book-modal form .header .close-btn {
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  border: none;
+}
+
+main .add-book-modal form .body {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+main .add-book-modal form .add-book-btn,
+main .add-book-modal form .body select,
+main .add-book-modal form .body input {
+  font-family: "Poppins";
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--shadow-color);
+  padding: 4px;
+  padding-left: 8px;
+}
+
+main .add-book-modal form .body input:focus {
+  outline: 1px;
+}
+
+main .add-book-modal form .add-book-btn {
+  font-family: "Poppins bold";
+  color: white;
+  border: none; 
+  background-color: var(--add-book-btn);
+  transition: 0.3s;
+}
+
+main .add-book-modal form .add-book-btn:hover {
+  background-color: var(--add-book-btn-hover);
 }

@@ -39,24 +39,28 @@
     </div>
     <dialog class="add-book-modal" id="addBookModal">
       <form>
-        <div>Add Book</div>
-        <!-- Book title -->
-        <label for="bookTitle">Title: </label>
-        <input id="bookTitle" type="text">
-        <!-- Book author -->
-        <label for="bookAuthor">Author: </label>
-        <input id="bookAuthor" type="text">
-        <!-- Book pages -->
-        <label for="bookPages">Pages: </label>
-        <input id="bookPages" type="number">
-        <!-- Read -->
-        <select name="read">
-          <option>Read</option>
-          <option>Not read</option>
-        </select>
+        <div class="header">
+          <div class="title">Add Book</div>
+          <button class="close-btn" id="closeAddBookModal" type="button"><img src="assets/icons/close.png" alt="close"></button>
+        </div>
+        <div class="body">
+          <!-- Book title -->
+          <label for="bookTitle">Title: </label>
+          <input id="bookTitle" type="text">
+          <!-- Book author -->
+          <label for="bookAuthor">Author: </label>
+          <input id="bookAuthor" type="text">
+          <!-- Book pages -->
+          <label for="bookPages">Pages: </label>
+          <input id="bookPages" type="number" min="2">
+          <!-- Read -->
+          <select id="isBookRead" name="read">
+            <option selected>Read</option>
+            <option>Not read</option>
+          </select>
+        </div>
 
-        <button id="addBook" type="button">Add</button>
-        <button id="closeAddBookModal" type="button">Close</button>
+        <button class="add-book-btn" id="addBook" type="button">Add</button>
       </form>
 
     </dialog>
